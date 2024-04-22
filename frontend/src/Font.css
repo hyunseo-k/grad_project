@@ -1,0 +1,42 @@
+/* src/fonts.css */
+@font-face {
+  font-family: 'DOSGothic';
+  src: url('../public/DOSGothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PADO';
+  src: url('../public/WavvePADO-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MBCGM';
+  src: url('../public/MBCGM.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MBCM';
+  src: url('../public/MBCM.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'C24';
+  src: url('../public/Cafe24SsurroundAir-v1.1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'C24B';
+  src: url('../public/Cafe24Ssurround-v2.0.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
