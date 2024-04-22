@@ -34,7 +34,6 @@ const BASEURL = "http://43.202.86.217/api/v1";
 export default function NavBar() {
   const { userId, SetUserId } = useContext(context);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { userType, SetUserType } = useContext(context);
   const [userName, setUserName] = useState("사용자");
 
   const GetUseInfo = async () => {
@@ -80,7 +79,7 @@ export default function NavBar() {
           <img src={"/img/logo_bottom.png"} style={{borderRadius: '50%', width: '80px'}} />
         </Link>
         <NavLink
-          link={`/offer/${userType}/`}
+          link={`/offer/`}
           name={"매칭 목록"}
           style={{ marginLeft: "auto", fontFamily: "C24B", fontSize: 25, fontweight: "bold" }}
         />
@@ -122,9 +121,7 @@ export default function NavBar() {
           />
           <NavLink2
             link={
-              userType === "student"
-                ? `/profile-student/${userId}`
-                : `/profile-company/${userId}`
+              `/profile-user/${userId}`
             }
             name={"마이페이지"}
           />

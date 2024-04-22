@@ -20,14 +20,11 @@ export const context = createContext({});
 
 function App() {
   const [userId, SetUserId] = useState("");
-  const [userType, setUserType] = useState("company");
   return (
     <context.Provider
       value={{
         userId,
         SetUserId,
-        userType,
-        setUserType,
       }}
     >
       <Router>
@@ -39,10 +36,7 @@ function App() {
           <Route path="/main" element={<Main />} />
           <Route
             path="/offer/:id"
-            element={
-              userType === "student" ? <OfferStudent /> : <OfferCompany />
-            }
-          />
+            element={<OfferCompany />} />
           <Route path="/profile-student/:id" element={<ProfileStudent />} />
           <Route path="/profile-company/:id" element={<ProfileCompany />} />
           <Route
