@@ -1,0 +1,16 @@
+.offer-block {
+  background-color: #f0f0f0; 
+  padding: 35px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  font-family: "MBCGM"; 
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailaccept {
+  background-color: #4CAF50; /* Change this to your preferred color */
+  color: white; /* Change this to your preferred text color */
+}
