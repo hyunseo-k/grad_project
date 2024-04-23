@@ -21,22 +21,22 @@ function Main() {
 
   const onSubmit = (data) => {
     RecommendedStudents(
-      data.interests,
-      data.university,
-      data.grade,
-      data.department
+      data.nickname,
+      data.life_pattern,
+      data.cleanliness,
+      data.smoking,
+      data.inextrovert
     );
   };
   console.log(userId);
 
   const [recommendedStudents, SetRecommendedStudents] = useState([
     {
-      name: "test",
-      university: "test",
-      department: "test",
-      grade: 1,
-      short_introduce: "test",
-      interests: "test",
+      nickname: "성대차은우",
+      life_pattern: "부엉이🦉",
+      cleanliness: "청소광🧼",
+      smoking: "비흡연자🚭",
+      inextrovert: "인싸🤳",
     },
   ]);
 
@@ -52,10 +52,10 @@ function Main() {
         method: "post",
         baseURL: BASEURL,
         data: {
-          interest: interest === "관심 분야 선택" ? null : interest,
-          university: university === "대학교 선택" ? null : university,
-          grade: grade === "학년 선택" ? null : grade,
-          department: department === "학과 선택" ? null : department,
+          interest: life_pattern === "생활패턴 선택" ? null : life_pattern,
+          university: cleanliness === "청결도 선택" ? null : cleanliness,
+          grade: smoking === "흡연여부 선택" ? null : smoking,
+          department: inextrovert === "성향 선택" ? null : inextrovert,
         },
       });
       if (res.data.isSuccess) {
@@ -68,47 +68,35 @@ function Main() {
   };
 
   useEffect(() => {
-    RecommendedStudents(null, "성균관대학교", null, null);
+    RecommendedStudents(null, "청소광🧼", null, null);
   }, []);
 
-  const interestsList = [
-    "운영체제",
-    "네트워크",
-    "보안",
-    "데이터베이스",
-    "인공지능",
-    "블록체인",
-    "가상현실",
-    "프론트엔드",
-    "백엔드",
+  const life_patternList = [
+    "얼리버드🐦",
+    "부엉이🦉",
   ];
 
-  const universityList = [
-    "중앙대학교",
-    "성균관대학교",
-    "카이스트",
-    "숙명여자대학교",
-    "포항공과대학교",
-    "고려대학교",
-    "연세대학교",
+  const cleanlinessList = [
+    "청소는 나중에😊",
+    "청소광🧼",
   ];
 
-  const departmentList = [
-    "컴퓨터공학과",
-    "스프트웨어학과",
-    "전산학과",
-    "인공지능학과",
-    "컴퓨터과학과",
-    "사이버보안학과",
-    "응용통계학과",
+  const smokingList = [
+    "흡연자🚬",
+    "비흡연자🚭",
+  ];
+
+  const inextrovertList = [
+    "인싸🤳",
+    "아싸📚",
   ];
 
   return (
     <Layout>
-      <form className="searchForm" onSubmit={handleSubmit(onSubmit)}>
-        <select className="leftSelect" {...register("interests")}>
-          <option value={null}>관심 분야 선택</option>
-          {interestsList.map((category, index) => {
+      <form className="searchForm" onSubmit={handleSubmit(onSubmit)} style={{padding:10}}>
+        <select className="life_pattern" {...register("interests")}>
+          <option value={null}>생활패턴 선택</option>
+          {life_patternList.map((category, index) => {
             return (
               <option key={category} value={category}>
                 {category}
@@ -116,9 +104,9 @@ function Main() {
             );
           })}
         </select>
-        <select {...register("university")}>
-          <option value={null}>대학교 선택</option>
-          {universityList.map((category, index) => {
+        <select {...register("cleanliness")}>
+          <option value={null}>청결도 선택</option>
+          {cleanlinessList.map((category, index) => {
             return (
               <option key={category} value={category}>
                 {category}
@@ -126,9 +114,9 @@ function Main() {
             );
           })}
         </select>
-        <select {...register("department")}>
-          <option value={null}>학과 선택</option>
-          {departmentList.map((category, index) => {
+        <select {...register("smoking")}>
+          <option value={null}>흡연여부 선택</option>
+          {smokingList.map((category, index) => {
             return (
               <option key={category} value={category}>
                 {category}
@@ -136,12 +124,15 @@ function Main() {
             );
           })}
         </select>
-        <select {...register("grade")}>
-          <option value={null}>학년 선택</option>
-          <option value={"1학년"}>1학년</option>
-          <option value={"2학년"}>2학년</option>
-          <option value={"3학년"}>3학년</option>
-          <option value={"4학년"}>4학년</option>
+        <select {...register("inextrovert")}>
+          <option value={null}>성향 선택</option>
+          {inextrovertList.map((category, index) => {
+            return (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            );
+          })}
         </select>
         <button className="submitInput" type="submit">
           <SearchIcon />

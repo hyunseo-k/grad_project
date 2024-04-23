@@ -33,7 +33,7 @@
 
   border: 0px;
   border-radius: 22px;
-  background: #979bfc;
+  background: #304D30;
 
   display: flex;
   align-items: center;
@@ -103,12 +103,12 @@
   align-items: center;
   justify-content: center;
 
-  background: black;
 }
 
 .recommendedStudentsDiv .name {
   width: 100%;
-
+  font-family: 'C24B';
+  padding: 5px;
   color: var(--gray6, #333);
   font-size: 24px;
   font-style: normal;
@@ -121,7 +121,7 @@
   border-radius: 2px;
   width: 100%;
 
-  background-color: black;
+  /* background-color: black; */
 }
 
 .recommendedStudentsDiv .info {
@@ -137,7 +137,7 @@
 }
 
 .recommendedStudentsDiv .interests {
-  width: 110px;
+  width: 30%;
   height: 35px;
 
   margin-bottom: 3px;
@@ -148,11 +148,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
+  font-family: "C24";
+  padding: 30px;
 
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 
-  background: linear-gradient(251deg, #8a6ae3 7.73%, #3338b3 100%);
+  background: linear-gradient(180deg, #589458 1.4%, #304D30 100%);
 }
