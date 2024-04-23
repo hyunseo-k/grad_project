@@ -26,7 +26,6 @@ function MainUser({ recommendedStudent }) {
         key={recommendedStudent.memberId}
         className="recommendedStudentsDiv"
         onClick={(event) => {
-          if (event.target.className === "suggestions") return;
           console.log(recommendedStudent.memberId);
           navigate(`/profile-user/${recommendedStudent.memberId}`);
         }}
