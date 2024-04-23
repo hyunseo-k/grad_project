@@ -7,7 +7,7 @@ import "./Register.css";
 import { context } from "../../App";
 import LoginLayout from "../../components/layout/LoginLayout";
 
-const BASEURL = "http://43.202.86.217/api/v1/member";
+const BASEURL = "http://localhost:8000/";
 
 function Register() {
   const { userId, SetUserId } = useContext(context);
@@ -20,33 +20,34 @@ function Register() {
 
   const onSubmit = (data) => {
     if (!errors.password2 && !errors.id) {
-      PostRegister(data.id, data.password);
+      PostRegister(data.id, data.password, data.nickname);
     }
+    const { id, password, nickname } = data;
   };
 
-  const PostRegister = async (id, password) => {
-    // try {
-    //   const res = await axios({
-    //     url: "/Register",
-    //     method: "post",
-    //     baseURL: BASEURL,
-    //     data: {
-    //       id: id,
-    //       pw: password,
-    //     },
-    //   });
-    //   console.log(res.data.result.memberId);
-    //   if (res.data.isSuccess) {
-    //     console.log(res.data.result.memberType.toLowerCase());
-    //     setUserType(res.data.result.memberType.toLowerCase());
-    //     SetUserId(res.data.result.memberId);
-    //     navigate("/login");
-    //   }
-    // } catch (error) {
-    //   console.log("can't use Register system", error);
-    // }
+  const PostRegister = async (id, password, nickname) => {
+    try {
+      const res = await axios({
+        url: "/Register",
+        method: "post",
+        baseURL: BASEURL,
+        data: {
+          id: id,
+          pw: password,
+          nickname: nickname,
+        },
+      });
+      console.log(nickname)
+      console.log(res.data.result.memberId);
+      if (res.data.isSuccess) {
+        console.log(res.data.result.memberId);
+        // SetUserId(res.data.result.memberId);
+        navigate("/login");
+      }
+    } catch (error) {
+      console.log("can't use Register system", error);
+    }
     // console.log(errors)
-    navigate("/login");
   };
 
   return (
