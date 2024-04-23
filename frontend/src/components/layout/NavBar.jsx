@@ -116,7 +116,7 @@ export default function NavBar() {
             안녕하세요, <b>{userName}님</b>
           </div>
           <hr
-            color="var(--purple5)"
+            color="green"
             style={{ width: "40%", borderRadius: "10px", margin: "-0.2rem" }}
           />
           <NavLink2
@@ -127,7 +127,7 @@ export default function NavBar() {
           />
           <NavLink2 link="/setting" name={"설정"} />
           <hr
-            color="var(--purple5)"
+            color="green"
             style={{
               width: "40%",
               borderRadius: "10px",
