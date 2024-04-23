@@ -6,10 +6,13 @@ import Login from "./pages/Login/Login";
 import Test from "./pages/Test/Test";
 import Test2 from "./pages/Test/Test2";
 import Register from "./pages/Register/Register";
+import ProfileUser from "./pages/Profile/ProfileUser";
+import Main from "./pages/Main/Main";
+import OfferUser from "./pages/Offer/OfferUser";
+
 import OfferCompany from "./pages/Offer/OfferCompany";
 import OfferStudent from "./pages/Offer/OfferStudent";
 
-import Main from "./pages/Main/Main";
 import ProfileStudent from "./pages/Profile/ProfileStudent";
 import ProfileCompany from "./pages/Profile/ProfileCompany";
 import ProfileEditStudent from "./pages/Profile/ProfileEditStudent";
@@ -34,11 +37,12 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/profile-user/:id" element={<ProfileUser />} />
           <Route
             path="/offer/:id"
-            element={<OfferCompany />} />
-          <Route path="/profile-student/:id" element={<ProfileStudent />} />
-          <Route path="/profile-company/:id" element={<ProfileCompany />} />
+            element={<OfferUser />} />
+          {/* <Route path="/profile-student/:id" element={<ProfileStudent />} />
+          <Route path="/profile-company/:id" element={<ProfileCompany />} /> */}
           <Route
             path="/profile-edit-student"
             element={<ProfileEditStudent />}
