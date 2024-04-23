@@ -14,7 +14,7 @@ export const Accordion = ({ title, content, color }) => {
         style={{
           cursor: "pointer",
           backgroundColor:
-            color === "primary" ? "var(--white)" : "var(--purple2)",
+            color === "primary" ? "var(--white)" : "#B6C4B6",
           border: `2px solid ${
             color === "primary" ? "var(--purple4)" : "var(--purple2)"
           }`,
@@ -58,7 +58,7 @@ export const Accordion = ({ title, content, color }) => {
           className="body2"
           style={{
             backgroundColor:
-              color !== "primary" ? "var(--white)" : "var(--purple1)",
+              color !== "primary" ? "var(--white)" : "#B6C4B6",
             border: `2px solid ${
               color !== "primary" ? "var(--purple4)" : "var(--purple1)"
             }`,
@@ -95,7 +95,7 @@ export const Accordion2 = ({ title, content, color }) => {
         style={{
           cursor: "pointer",
           backgroundColor:
-            color === "primary" ? "var(--white)" : "var(--purple2)",
+            color === "primary" ? "var(--white)" : "#B6C4B6",
           border: `2px solid ${
             color === "primary" ? "var(--purple4)" : "var(--purple2)"
           }`,
@@ -139,7 +139,7 @@ export const Accordion2 = ({ title, content, color }) => {
           className="body2"
           style={{
             backgroundColor:
-              color !== "primary" ? "var(--white)" : "var(--purple1)",
+              color !== "primary" ? "var(--white)" : "#B6C4B6",
             border: `2px solid ${
               color !== "primary" ? "var(--purple4)" : "var(--purple1)"
             }`,

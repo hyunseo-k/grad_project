@@ -26,10 +26,10 @@ const NavLink = ({ style, link, name }) => {
 };
 
 const NavLink2 = ({ style, link, name }) => {
-  return <NavLink link={link} name={name} style={{ padding: "0rem" }} />;
+  return <NavLink link={link} name={name} style={{ padding: "0rem", fontFamily:"C24", fontSize: 20 }} />;
 };
 
-const BASEURL = "http://43.202.86.217/api/v1";
+const BASEURL = "http://localhost:8000/";
 
 export default function NavBar() {
   const { userId, SetUserId } = useContext(context);
@@ -44,7 +44,7 @@ export default function NavBar() {
         baseURL: BASEURL,
       });
 
-      if (true) setUserName(res.data.result.name);
+      if (true) setUserName(res.data.result.nickname);
     } catch (error) {
       console.log("can't use user info system", error);
     }
@@ -79,7 +79,7 @@ export default function NavBar() {
           <img src={"/img/logo_bottom.png"} style={{borderRadius: '50%', width: '80px'}} />
         </Link>
         <NavLink
-          link={`/offer/`}
+          link={`/offer/${userId}`}
           name={"매칭 목록"}
           style={{ marginLeft: "auto", fontFamily: "C24B", fontSize: 25, fontweight: "bold" }}
         />
@@ -112,7 +112,7 @@ export default function NavBar() {
           }}
           className="whiteContainer"
         >
-          <div>
+          <div style={{fontFamily: "C24", fontSize: 23, fontweight: "bold"}}>
             안녕하세요, <b>{userName}님</b>
           </div>
           <hr
