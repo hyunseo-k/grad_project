@@ -7,7 +7,7 @@ import "./Login.css";
 import { context } from "../../App";
 import LoginLayout from "../../components/layout/LoginLayout";
 
-const BASEURL = "http://43.202.86.217/api/v1/member";
+const BASEURL = "http://localhost:8000/";
 
 function Login() {
   const { userId, SetUserId } = useContext(context);
@@ -19,27 +19,24 @@ function Login() {
     PostLogIn(data.id, data.password);
   };
   const PostLogIn = async (id, password) => {
-    // try {
-    //   const res = await axios({
-    //     url: "/login",
-    //     method: "post",
-    //     baseURL: BASEURL,
-    //     data: {
-    //       id: id,
-    //       pw: password,
-    //     },
-    //   });
-    //   console.log(res.data.result.memberId);
-    //   if (res.data.isSuccess) {
-    //     console.log(res.data.result.memberType.toLowerCase());
-    //     SetUserId(res.data.result.memberId);
-    //     navigate("/main");
-    //   }
-    // } catch (error) {
-    //   console.log("can't use login system", error);
-    // }
-    SetUserId(0);
-    navigate("/main");
+    try {
+      const res = await axios({
+        url: "/login",
+        method: "post",
+        baseURL: BASEURL,
+        data: {
+          id: id,
+          pw: password,
+        },
+      });
+      console.log(res.data.result.memberId);
+      if (res.data.isSuccess) {
+        SetUserId(res.data.result.memberId);
+        navigate("/main");
+      }
+    } catch (error) {
+      console.log("can't use login system", error);
+    }
   };
 
   return (
