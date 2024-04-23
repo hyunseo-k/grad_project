@@ -10,13 +10,6 @@ import ProfileUser from "./pages/Profile/ProfileUser";
 import Main from "./pages/Main/Main";
 import OfferUser from "./pages/Offer/OfferUser";
 
-import OfferCompany from "./pages/Offer/OfferCompany";
-import OfferStudent from "./pages/Offer/OfferStudent";
-
-import ProfileStudent from "./pages/Profile/ProfileStudent";
-import ProfileCompany from "./pages/Profile/ProfileCompany";
-import ProfileEditStudent from "./pages/Profile/ProfileEditStudent";
-import ProfileEditCompany from "./pages/Profile/ProfileEditCompany";
 import './Font.css';
 
 export const context = createContext({});
@@ -41,16 +34,7 @@ function App() {
           <Route
             path="/offer/:id"
             element={<OfferUser />} />
-          {/* <Route path="/profile-student/:id" element={<ProfileStudent />} />
-          <Route path="/profile-company/:id" element={<ProfileCompany />} /> */}
-          <Route
-            path="/profile-edit-student"
-            element={<ProfileEditStudent />}
-          />
-          <Route
-            path="/profile-edit-company"
-            element={<ProfileEditCompany />}
-          />
+
         </Routes>
       </Router>
     </context.Provider>
