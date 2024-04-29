@@ -31,6 +31,12 @@ _Sungkyunkwan University Dormitory Roommate Matching Service_
 5. **Profile Page**: A page where users can view and edit their profile.
 6. **Offer Page**: A page where users can manage offers (send, receive, check matches).
 
+## Screenshots
+<img src=https://github.com/hyunseo-k/grad_project/assets/79782180/e65044ed-47cf-4f92-ba5d-6688f8169d63 width=50%/>
+<img src=https://github.com/hyunseo-k/grad_project/assets/79782180/3150898b-14f0-4d2b-95b8-8313963dd5ba width=50%/>
+
+
+
 ## Installation and Execution Methods
 
 ```bash
