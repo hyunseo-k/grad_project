@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'Khsisstar88!',
+  password: 'PW_FOR_DB',
   database: 'nice',
   // insecureAuth: true,
 });
